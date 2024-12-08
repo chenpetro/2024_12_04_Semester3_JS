@@ -125,7 +125,24 @@ container.innerHTML += `
     const searchInput = document.getElementById('search-input')
     const searchBtn = document.getElementById('search-btn')
     const priceFilter = document.getElementById('price-filter')
+    const searchBtnProduct = document.getElementById('search-btn-product')
 
+    searchBtnProduct.addEventListener('click', function(){
+        let searchInputValue = searchInput.value
+        const findProduct = products.find(function(element){
+            return element.name == searchInputValue || element.price == searchInputValue
+        })
+            container.innerHTML = ''
+            container.innerHTML = `
+            <div class="card">
+                <img src="${findProduct.photo}" alt="" class="card-img">
+                <p class="card-name">${findProduct.name}</p>
+                <p class="card-price">${findProduct.price} UAH</p>
+                <p class="card-available">${findProduct.available == true ? 'available' : 'not available'}</p>
+                <button class="card-buy">Buy</button>
+            </div>
+            `
+                })
 
 
 
