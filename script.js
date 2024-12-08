@@ -85,7 +85,22 @@ products.push(
     { photo: "https://via.placeholder.com/150", name: "Смартфон AF32", price: 7500, available: false },
     { photo: "https://via.placeholder.com/150", name: "Смартфон AG33", price: 13500, available: true },
     { photo: "https://via.placeholder.com/150", name: "Смартфон AH34", price: 18000, available: false },
-    { photo: "https://via.placeholder.com/150", name: "Смартфон AI35", price: 5000, available: true }
+    { photo: "https://via.placeholder.com/150", name: "Смартфон AI35", price: 5000, available: true },
+    { photo: "https://via.placeholder.com/150", name: "Смартфон AJ36", price: 6000, available: false }, 
+    { photo: "https://via.placeholder.com/150", name: "Смартфон AK37", price: 15000, available: true }, 
+    { photo: "https://via.placeholder.com/150", name: "Смартфон AL38", price: 13000, available: false }, 
+    { photo: "https://via.placeholder.com/150", name: "Смартфон AM39", price: 16000, available: true }, 
+    { photo: "https://via.placeholder.com/150", name: "Смартфон AN40", price: 3000, available: false }, 
+    { photo: "https://via.placeholder.com/150", name: "Смартфон AO41", price: 4000, available: true }, 
+    { photo: "https://via.placeholder.com/150", name: "Смартфон AP42", price: 9500, available: false }, 
+    { photo: "https://via.placeholder.com/150", name: "Смартфон AQ43", price: 17000, available: true }, 
+    { photo: "https://via.placeholder.com/150", name: "Смартфон AR44", price: 12500, available: false }, 
+    { photo: "https://via.placeholder.com/150", name: "Смартфон AS45", price: 20000, available: true }, 
+    { photo: "https://via.placeholder.com/150", name: "Смартфон AT46", price: 3500, available: false }, 
+    { photo: "https://via.placeholder.com/150", name: "Смартфон AU47", price: 10000, available: true }, 
+    { photo: "https://via.placeholder.com/150", name: "Смартфон AV48", price: 22000, available: false }, 
+    { photo: "https://via.placeholder.com/150", name: "Смартфон AW49", price: 2000, available: true }, 
+    { photo: "https://via.placeholder.com/150", name: "Смартфон AX50", price: 7500, available: false } 
 )
     const container = document.querySelector ('.container')
     const balanceHtml = document.querySelector('.balance')
@@ -109,17 +124,25 @@ container.innerHTML += `
     const cardBtns = document.querySelectorAll('.card-buy')
     const searchInput = document.getElementById('search-input')
     const searchBtn = document.getElementById('search-btn')
+    const priceFilter = document.getElementById('price-filter')
 
-const availableProducts = products.filter(function(element){
-    return element.available == true
-})
 
-const unavailableProducts = products.filter(function(element){
-    return element.available == false
-})
+
 
 searchBtn.addEventListener('click', function(){
     let searchInputValue = searchInput.value
+    let priceFilterValue = priceFilter.value
+
+    const availableProducts = products.filter(function(element){
+        return element.available == true && element.price >= priceFilterValue
+
+    })
+    
+    const unavailableProducts = products.filter(function(element){
+        return element.available == false && element.price >= priceFilterValue
+
+    })
+
     if (searchInputValue == 'available') {
         container.innerHTML = ''
         availableProducts.forEach(function(element){
