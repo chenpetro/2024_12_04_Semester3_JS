@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інтернет-магазин</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <h1>Інтернет-магазин</h1>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Пошук товарів...">
+            <input type="number" id="price-filter" placeholder="Макс. ціна (₴)">
+            <button id="search-btn">🔍</button>
+          </div>
+          <nav class="nav-menu">
+            <a href="">Головна</a>
+            <a href="">Товари</a>
+            <a href="">Про нас</a>
+            <a href="">Ваш баланс: <span class="balance">0₴</span></a>
+          </nav>
+        <!-- Бургер меню -->
+        <div class="burger-menu">
+            <div class="burger-icon" id="burger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="burger-dropdown" id="burger-dropdown">
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="products.html">Товари</a></li>
+                <li><a href="about.html">Про нас</a></li>
+                <li><a href="index.html">Вихід</a></li>
+            </ul>
+        </div>
+    </header>
+      
+      <!-- Модальне вікно -->
+      <div id="modal">
+        <div class="modal-content">
+          <h2>Дякую за покупку!</h2>
+          <a href="#" style="text-decoration: none;">
+          </a>
+        </div>
+      </div>
+
+
+    <div class="container">
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Про нас</h4>
+                <p>Ми — найкращий інтернет-магазин, що пропонує якісні товари за доступними цінами.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Навігація</h4>
+                <ul>
+                    <li><a href="index.html">Головна</a></li>
+                    <li><a href="products.html">Товари</a></li>
+                    <li><a href="about.html">Про нас</a></li>
+                    <li><a href="contact.html">Контакти</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Контакти</h4>
+                <p>Телефон: +380 (99) 123-45-67</p>
+                <p>Email: info@store.com</p>
+                <p>Адреса: вул. Магазинна, 123, Київ</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Інтернет-магазин. Усі права захищені.</p>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+</html>
